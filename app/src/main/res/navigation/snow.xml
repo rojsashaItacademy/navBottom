@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/snow"
+    app:startDestination="@id/snowFragment">
+
+    <fragment
+        android:id="@+id/snowFragment"
+        android:name="com.trinitydigital.bottomnav.SnowFragment"
+        android:label="SnowFragment"
+        tools:layout="@layout/fragment_snow" >
+        <action
+            android:id="@+id/action_snowFragment_to_detailsSnowFragment"
+            app:destination="@id/detailsSnowFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsSnowFragment"
+        tools:layout="@layout/fragment_detail_snow"
+        android:name="com.trinitydigital.bottomnav.DetailsSnowFragment"
+        android:label="DetailsSnowFragment" >
+        <argument
+            android:name="details"
+            app:argType="com.trinitydigital.bottomnav.Test"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+</navigation>
